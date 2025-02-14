@@ -1,0 +1,38 @@
+header {
+  color: var(--text-color);
+  box-shadow: 0px 4px 6px 0px rgba(69, 69, 69, 0.08);
+  background: rgb(255, 255, 255);
+	padding: 5px 0;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo img {
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+nav ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+  color: rgb(41, 41, 41);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.header-btn {
+  background: var(--primary-color);
+  border-radius: 8px;
+  border: none;
+  color: white;
+  background: rgb(233, 101, 8);
+  padding: 18px 44px;
+}

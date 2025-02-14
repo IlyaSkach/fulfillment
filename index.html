@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Фулфилмент для маркетплейсов</title>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="Styles/reset.css">
+	<link rel="stylesheet" href="Styles//variables.css">
+	<link rel="stylesheet" href="Styles//styles.css">
+	<link rel="stylesheet" href="Styles//header.css">
+	<link rel="stylesheet" href="Styles//sections.css">
+	<link rel="stylesheet" href="Styles//footer.css">
+</head>
+
+<body>
+
+	<header>
+		<div class="container header-container">
+			<div class="logo">
+				<img src="images/svg/logo.svg" alt="Логотип">
+			</div>
+			<nav>
+				<ul>
+					<li><a href="#about">О нас</a></li>
+					<li><a href="#services">Услуги</a></li>
+					<li><a href="#advantages">Цены</a></li>
+					<li><a href="#faq">Контакты</a></li>
+				</ul>
+			</nav>
+			<button class="header-btn">Перезвоните мне</button>
+		</div>
+	</header>
+
+	<section id="about" class="section">
+		<div class="container">
+			<div class="about-info">
+				<div>
+					<h2>фулфилмент<br><span>полного цикла</span><br>для маркетплейсов</h2>
+					<p class="about-dis">Приемка, упаковка, маркировка, доставка
+						заказов на Wildberries и Ozon
+					</p>
+					<div class="btn-section">
+						<div class="button-container">
+							<button class="custom-button">Оставить заявку</button>
+						</div>
+						<button class="btn-price">Прайс <img src="Images/svg/price.svg" alt="btn img"></button>
+					</div>
+				</div>
+				<img src="Images/svg/titleblock.svg" alt="img title">
+			</div>
+			<div class="about-footer">
+				<div class="about-footer-item">
+					<div class="about-circle">
+						<img src="Images/svg/fix.svg" alt="">
+					</div>
+					<p class="about-text">Фиксированная цена, все услуги
+						без скрытых платежей</p>
+				</div>
+				<div class="about-footer-item">
+					<div class="about-circle">
+						<img src="Images/svg/geoteg.svg" alt="">
+					</div>
+					<p class="about-text">Мы находимся в удобной
+						доступности от складов FBO/FBS</p>
+				</div>
+				<div class="about-footer-item">
+					<div class="about-circle">
+						<img src="Images/svg/fix.svg" alt="">
+					</div>
+					<p class="about-text">Фиксированная цена, все услуги
+						без скрытых платежей</p>
+				</div>
+			</div>
+		</div>
+		</div>
+
+	</section>
+
+	<section id="services" class="section">
+		<div class="container">
+			<h2>Наши услуги</h2>
+			<p>Описание услуг...</p>
+		</div>
+	</section>
+
+	<section id="advantages" class="section">
+		<div class="container">
+			<h2>Преимущества</h2>
+			<p>Описание преимуществ...</p>
+		</div>
+	</section>
+
+	<section id="faq" class="section">
+		<div class="container">
+			<h2>Ответы на часто задаваемые вопросы</h2>
+			<p>Тут будут вопросы и ответы...</p>
+		</div>
+	</section>
+
+	<footer>
+		<div class="container">
+			<p>Контакты и информация</p>
+		</div>
+	</footer>
+
+
+	<!-- <div class="line-with-image">
+			<img id="movingSvg" src="./Images/test.png" alt="Image">
+	</div> -->
+
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script>
+    let mainAnimation = gsap.to("#movingSvg", {
+        x: "100vw", // Двигаем вправо
+        duration: 15, // Делаем движение медленнее
+        ease: "power1.inOut", // Плавное начало и конец
+        yoyo: false, // Не повторяем назад
+        repeat: 0, // Обычная анимация без зацикливания
+        onUpdate: function() {
+            let progress = this.progress(); // Получаем текущий прогресс анимации (от 0 до 1)
+            if (Math.random() < 0.003) { // 5% вероятность подпрыгивания
+                gsap.to("#movingSvg", { 
+                    y: -10, // Подпрыгивание вверх
+                    duration: 0.2, 
+                    ease: "power1.out", 
+                    yoyo: true, 
+                    repeat: 1, 
+                    onComplete: () => { gsap.to("#movingSvg", { y: 0, duration: 0.2, ease: "power1.inOut" }); } // Плавный возврат на линию
+                });
+            }
+        }
+    });
+</script> -->
+
+
+
+</body>
+
+</html>
