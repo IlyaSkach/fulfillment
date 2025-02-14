@@ -35,9 +35,25 @@
 }
 
 .about-info {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.text-content {
+	flex: 0 0 60%; /* Текст занимает 60% */
+}
+
+.image-content {
+	flex: 0 0 40%; /* Изображение занимает 40% */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.image-content img {
+	max-width: 100%;
+	height: auto;
 }
 
 .btn-section {
