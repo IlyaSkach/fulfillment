@@ -20,40 +20,39 @@
   span {
     color: var(--primary-color);
   }
-
 }
 
 .about-dis {
   color: var(--text-color);
-    font-size: 26px;
-    font-weight: 400;
-    line-height: 32px;
-    text-align: left;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    max-width: 600px;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 32px;
+  text-align: left;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  max-width: 600px;
 }
 
 .about-info {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .text-content {
-	flex: 0 0 60%; /* Текст занимает 60% */
+  flex: 0 0 60%; /* Текст занимает 60% */
 }
 
 .image-content {
-	flex: 0 0 40%; /* Изображение занимает 40% */
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  flex: 0 0 40%; /* Изображение занимает 40% */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .image-content img {
-	max-width: 100%;
-	height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .btn-section {
@@ -124,16 +123,16 @@
 }
 
 .about-footer {
-	margin-top: 80px;
+  margin-top: 80px;
   display: flex;
-	justify-content: space-between;
+  justify-content: space-between;
 }
 
 .about-footer-item {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
 }
 
 .about-text {
@@ -142,7 +141,7 @@
   font-weight: 400;
   line-height: 16px;
   text-align: left;
-	max-width: 277px;
+  max-width: 277px;
 }
 
 .about-circle {
@@ -153,7 +152,151 @@
   display: flex;
   align-items: center;
   justify-content: center;
-	margin-right: 15px;
+  margin-right: 15px;
+}
+
+.half-image-container {
+	position: relative;
+	width: 100%;
+	height: 0;
+}
+
+.half-image {
+	position: absolute;
+	right: 0;
+	top: -50%; /* Подстройте это значение в зависимости от высоты изображения */
+	transform: translateY(-50%);
+	width: 10%;
+	height: auto;
+}
+
+
+.shape {
+	position: relative;
+	width: 316px;
+}
+
+.background-image {
+	object-fit: cover;
+}
+
+.inner-image {
+	position: absolute;
+	top: 50%; /* Позиционирование по вертикали */
+	left: 15%; /* Позиционирование по горизонтали */
+	transform: translate(-50%, -50%); /* Центрирование изображения */
+	width: 100px; /* Установите нужный размер внутреннего изображения */
+	height: auto;
+}
+
+#services {
+  h2 {
+    color: rgb(69, 69, 69);
+    font-family: Bebas Neue Cyrillic;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 50px;
+    text-align: center;
+    text-transform: uppercase;
+		margin-bottom: 70px;
+  }
+}
+
+.services-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 11px;
+  position: relative;
+}
+
+.services-item-card {
+  position: relative;
+  padding: 15px;
+  box-sizing: border-box;
+  border-radius: 15px;
+  background: rgb(249, 249, 249);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(33.333% - 22px);
+  margin-bottom: 50px;
+  transition: transform 1.2s ease-in-out, border 1.2s ease-in-out;
+  border: 2px solid transparent;
+}
+
+/* Вертикальная линия сверху */
+.services-item-card::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  width: 1px;
+  height: var(--line-height, 517px);
+  background-color: var(--primary-color);
+  transition: height 1.2s ease-in-out;
+}
+
+/* Вертикальная линия снизу */
+.services-item-card::after {
+  content: "";
+  position: absolute;
+  top: -7%;
+  left: 50%;
+  width: 1px;
+  height: var(--small-line-height, 31px);
+  background-color: var(--primary-color);
+  transition: height 1.2s ease-in-out;
+}
+
+
+
+/* Убираем верхнюю линию у карточек верхнего ряда */
+.services-item-card:nth-child(-n+3)::before {
+  display: none;
+}
+
+/* Убираем нижнюю линию у карточек нижнего ряда */
+.services-item-card:nth-last-child(-n+2)::after {
+  display: none;
+}
+
+.services-item::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  width: 65%;
+  height: 1px;
+  background-color: var(--primary-color);
+  transform: translateX(-50%);
+}
+
+
+
+
+
+
+
+
+
+h5 {
+  color: var(--text-color);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 32px;
+  text-align: center;
+	margin-bottom: 20px;
+}
+
+.services-text {
+  color: var(--text-color);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  max-width: 357px;
+	margin-top: 30px;
 }
 
 #advantages {
