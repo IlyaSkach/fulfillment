@@ -156,37 +156,36 @@
 }
 
 .half-image-container {
-	position: relative;
-	width: 100%;
-	height: 0;
+  position: relative;
+  width: 100%;
+  height: 0;
 }
 
 .half-image {
-	position: absolute;
-	right: 0;
-	top: -50%; /* Подстройте это значение в зависимости от высоты изображения */
-	transform: translateY(-50%);
-	width: 10%;
-	height: auto;
+  position: absolute;
+  right: 0;
+  top: -50%; /* Подстройте это значение в зависимости от высоты изображения */
+  transform: translateY(-50%);
+  width: 10%;
+  height: auto;
 }
 
-
 .shape {
-	position: relative;
-	width: 316px;
+  position: relative;
+  width: 316px;
 }
 
 .background-image {
-	object-fit: cover;
+  object-fit: cover;
 }
 
 .inner-image {
-	position: absolute;
-	top: 50%; /* Позиционирование по вертикали */
-	left: 15%; /* Позиционирование по горизонтали */
-	transform: translate(-50%, -50%); /* Центрирование изображения */
-	width: 100px; /* Установите нужный размер внутреннего изображения */
-	height: auto;
+  position: absolute;
+  top: 50%; /* Позиционирование по вертикали */
+  left: 15%; /* Позиционирование по горизонтали */
+  transform: translate(-50%, -50%); /* Центрирование изображения */
+  width: 100px; /* Установите нужный размер внутреннего изображения */
+  height: auto;
 }
 
 #services {
@@ -198,7 +197,7 @@
     line-height: 50px;
     text-align: center;
     text-transform: uppercase;
-		margin-bottom: 70px;
+    margin-bottom: 70px;
   }
 }
 
@@ -249,15 +248,13 @@
   transition: height 1.2s ease-in-out;
 }
 
-
-
 /* Убираем верхнюю линию у карточек верхнего ряда */
-.services-item-card:nth-child(-n+3)::before {
+.services-item-card:nth-child(-n + 3)::before {
   display: none;
 }
 
 /* Убираем нижнюю линию у карточек нижнего ряда */
-.services-item-card:nth-last-child(-n+2)::after {
+.services-item-card:nth-last-child(-n + 2)::after {
   display: none;
 }
 
@@ -272,21 +269,13 @@
   transform: translateX(-50%);
 }
 
-
-
-
-
-
-
-
-
 h5 {
   color: var(--text-color);
   font-size: 26px;
   font-weight: 600;
   line-height: 32px;
   text-align: center;
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .services-text {
@@ -296,20 +285,31 @@ h5 {
   line-height: 24px;
   text-align: center;
   max-width: 357px;
-	margin-top: 30px;
+  margin-top: 30px;
 }
 
 #advantages {
   position: relative;
   background: var(--primary-color);
-  padding: var(--section-padding) 0;
-  text-align: center;
   overflow: hidden;
-  height: 400px;
 
   h2 {
-    color: white;
-    padding: 50px;
+    color: var(--title-text-color);
+    font-family: Bebas Neue Cyrillic;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 50px;
+    text-align: center;
+    margin-bottom: 70px;
+    text-transform: uppercase;
+  }
+
+  p {
+    color: var(--text-color);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
   }
 }
 
@@ -357,4 +357,274 @@ h5 {
   vertical-align: middle; /* Добавлено для выравнивания изображения по линии */
   position: relative;
   top: -22px; /* Подстройка для выравнивания по линии */
+}
+
+.advantages-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px; /* Расстояние между карточками */
+}
+
+.advantages-item-card {
+  flex: 0 0 calc(33.333% - 20px); /* Три карточки в ряд с учетом gap */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  margin-bottom: 40px; /* Увеличенный отступ между первым и вторым рядом */
+  max-width: 340px;
+}
+
+.advantages-item-card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 40px; /* Отступ между изображением и текстом */
+}
+
+.advantages-item-card p {
+  margin: 0;
+}
+
+#working {
+  h2 {
+    font-family: Bebas Neue Cyrillic;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 70px;
+  }
+
+  span {
+    color: var(--primary-color);
+  }
+}
+
+.working-title {
+  color: var(--text-color);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 32px;
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 60px;
+}
+
+.working-item {
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+  gap: 20px;
+}
+
+.working-text {
+  color: var(--text-color);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 29px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.working-item-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+
+#how {
+  position: relative;
+  overflow: visible; /* Позволяет элементам выходить за пределы секции */
+  background-color: #242424;
+  h2 {
+    color: rgb(255, 255, 255);
+    font-family: Bebas Neue Cyrillic;
+    font-size: 65px;
+    font-weight: 400;
+    line-height: 65px;
+    letter-spacing: 0%;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 235px;
+  }
+}
+
+.top-image-container,
+.bottom-image-container {
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.top-image-container {
+  top: -50px; /* Подстройте это значение в зависимости от высоты изображения */
+}
+
+.bottom-image-container {
+  bottom: -50px; /* Подстройте это значение в зависимости от высоты изображения */
+}
+
+.top-image,
+.bottom-image {
+  width: 100vw; /* Ширина изображения равна ширине окна просмотра */
+  height: auto;
+}
+
+/* Новые стили для новых изображений */
+.new-top-left-image-container,
+.new-bottom-right-image-container {
+  position: absolute;
+}
+
+.new-top-left-image-container {
+  top: 116px;
+  left: 0;
+}
+
+.new-bottom-right-image-container {
+  bottom: 0;
+  right: 0;
+}
+
+.new-top-left-image,
+.new-bottom-right-image {
+  width: 50%; /* Установите нужную ширину */
+  height: auto; /* Установите нужную высоту */
+}
+
+#custom-section {
+  padding: 40px 0;
+}
+
+.center-line {
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  margin: 20px 0;
+  position: relative;
+}
+
+.center-icon {
+  position: absolute;
+  top: -149px; /* Подстройте это значение в зависимости от высоты изображения */
+  left: 3%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.card-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px; /* Расстояние между карточками */
+  margin-bottom: 80px; /* Отступ между рядами */
+  margin-top: 40px;
+  align-items: flex-start; /* Выравнивание карточек по верхнему краю */
+  position: relative;
+}
+
+.card {
+  flex: 0 0 calc(22% - 20px); /* Четыре карточки в ряд с учетом gap */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 27px;
+  position: relative;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -227px; /* Подстройте это значение в зависимости от высоты линии */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 216px; /* Высота линии */
+  background-color: #fff;
+}
+
+.card-row:first-of-type .card::before {
+  top: -60px; /* Подстройте это значение в зависимости от высоты линии */
+  height: 60px; /* Высота линии для верхних блоков */
+}
+
+.card-row:nth-of-type(2) .card::before {
+  top: -39px; /* Подстройте это значение в зависимости от высоты линии */
+  height: 32px; /* Высота линии для нижних блоков */
+}
+
+.circle {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px; /* Размер круга */
+  height: 52px; /* Размер круга */
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle img {
+  width: 24px; /* Размер SVG */
+  height: 24px; /* Размер SVG */
+}
+
+/* Позиционирование кругов для первого ряда */
+.circle-1 {
+  top: -80px; /* Подстройте это значение в зависимости от высоты линии */
+}
+
+.circle-2 {
+  top: -80px; /* Подстройте это значение в зависимости от высоты линии */
+}
+
+.circle-3 {
+  top: -80px; /* Подстройте это значение в зависимости от высоты линии */
+}
+
+.circle-4 {
+  top: -80px; /* Подстройте это значение в зависимости от высоты линии */
+}
+
+/* Позиционирование кругов для второго ряда */
+.circle-5 {
+  top: -270px; /* Подстройте это значение в зависимости от высоты линии */
+}
+
+.circle-6 {
+  top: -270px; /* Подстройте это значение в зависимости от высоты линии */
+}
+
+.circle-7 {
+  top: -270px; /* Подстройте это значение в зависимости от высоты линии */
+}
+
+.how-footer {
+	display: flex;
+	justify-content: center;
+	gap: 30px;
+	align-items: center;
+}
+
+.how-footer-text {
+  color: rgb(255, 255, 255);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 34px;
+  text-align: center;
 }
