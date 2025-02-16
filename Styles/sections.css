@@ -615,10 +615,10 @@ h5 {
 }
 
 .how-footer {
-	display: flex;
-	justify-content: center;
-	gap: 30px;
-	align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
 }
 
 .how-footer-text {
@@ -628,3 +628,628 @@ h5 {
   line-height: 34px;
   text-align: center;
 }
+
+#choose {
+  h2 {
+    color: var(--title-text-color);
+    font-family: Bebas Neue Cyrillic;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 80px;
+  }
+}
+
+.choose-discription {
+  color: var(--text-color);
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 32px;
+  text-align: center;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin: 20px auto 30px;
+}
+
+.choose-item {
+  width: 105%;
+  height: 391px; /* Подстрой под свои размеры */
+  background-color: #5e3789;
+  clip-path: path(
+    "M0 100C0 44.77 44.77 0 100 0H300H434.24C444.68 0 455.06 1.64 465 4.85L569.24 38.55C589.24 45.02 610.76 45.02 630.76 38.55L735 4.85C744.94 1.64 755.32 0 765.76 0H900H1100C1155.23 0 1200 44.77 1200 100V291C1200 346.23 1155.23 391 1100 391H900H766.69C755.64 391 744.67 389.17 734.22 385.58L632.47 350.65C611.43 343.42 588.57 343.42 567.53 350.65L465.78 385.58C455.33 389.17 444.36 391 433.31 391H300H100C44.77 391 0 346.23 0 291V100Z"
+  );
+
+  display: flex;
+  align-items: center;
+}
+
+.choose-item-card {
+  padding: 60px 102px;
+}
+
+.choose-text-title {
+  color: rgb(255, 255, 255);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 32px;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.choose-text-subtitle {
+  color: rgb(113, 243, 253);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 32px;
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+.choose-text-discription {
+  color: rgb(255, 255, 255);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 27px;
+  text-align: left;
+  max-width: 325px;
+}
+
+.calculate-form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  padding-right: 80px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid white;
+  background-color: transparent;
+  color: rgb(146, 146, 146);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 20px;
+  text-align: left;
+}
+
+.calculate-button {
+  position: relative;
+  color: rgb(57, 57, 57);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  padding: 19px 31px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  z-index: 2; /* Изменено на 2 */
+  box-sizing: border-box;
+  border: 1px solid white;
+  border-radius: 8px;
+  background-color: transparent; /* Добавлено для прозрачного фона */
+  border-bottom: none;
+  border-right: none;
+}
+
+.button-container::after {
+  content: "";
+  position: absolute;
+  top: 4px; /* Смещение для эффекта разделения */
+  left: 4px;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: rgb(113, 243, 253);
+  z-index: 1; /* Изменено на 1 */
+  transition: all 0.4s ease;
+}
+
+.button-container:hover::after {
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid white;
+  border-right: 1px solid white;
+}
+
+.checkbox-group {
+  text-align: left;
+  margin-top: 70px;
+  color: rgb(255, 255, 255);
+
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 15px;
+  padding-right: 80px;
+}
+
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  user-select: none;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #3d0080;
+  border-radius: 4px;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #3d0080;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-container .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+#quiz {
+  h2 {
+    color: var(--title-text-color);
+    font-family: Bebas Neue Cyrillic;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 80px;
+  }
+}
+
+.start-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Высота экрана */
+}
+
+.button-container.quiz-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*QWIZ*/
+
+.header-block {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  padding-top: 20px;
+  background-color: var(--primary-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0; /* Фиксация блока у верхней части страницы */
+  z-index: 10;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar.operator-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ff9800;
+  margin-bottom: 10px;
+}
+
+.call-button {
+  padding: 10px;
+  background-color: transparent;
+  color: #1a2c4a;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: rgb(249, 249, 249) ;
+  height: 10px;
+  border-radius: 5px;
+}
+
+.progress {
+  width: 0%;
+  height: 100%;
+  background-color: #3d0080;
+  border-radius: 5px;
+}
+
+.welcome-text {
+  color: white;
+
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+
+  margin-left: 20px;
+  animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+main {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.chat {
+  margin-top: 20px;
+}
+
+.chat-message {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.operator-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ff9800;
+  margin-right: 10px;
+  overflow: hidden; /* Скрываем части изображения, выходящие за границы контейнера */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.operator-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Изображение будет обрезано, чтобы заполнить контейнер */
+}
+
+.message {
+  background-color: rgb(249, 249, 249);
+  font-family: Montserrat;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 80%;
+  position: relative;
+  margin-left: 50px;
+  color: rgb(69, 69, 69);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.message::before {
+  position: absolute;
+  top: -6px;
+  left: -2px;
+  z-index: 1;
+  height: 10px;
+  width: 10px;
+  content: "";
+  background-color: #f1f1f1;
+  clip-path: polygon(100% 0, 0 100%, 100% 100%);
+  transform: rotate(66deg);
+}
+
+.options {
+  margin-top: 10px;
+}
+
+.first {
+  max-width: 180px;
+}
+
+.options button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #f1f1f1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #1a2c4a;
+  font-family: Montserrat;
+  color: rgb(69, 69, 69);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.image {
+  width: 150px;
+  height: 100px;
+}
+
+input[type="text"],
+input[type="tel"] {
+  width: 96%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.submit-button {
+  width: 100%;
+
+
+  color: white;
+  border: none;
+  margin-top: 20px;
+  cursor: pointer;
+
+  background: var(--primary-color);
+  border-radius: 8px;
+  border: none;
+  background: rgb(233, 101, 8);
+  padding: 18px 44px;
+}
+
+.final-screen {
+  padding: 10px;
+}
+
+.user-answer {
+  color: #1a2c4a;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  font-family: Montserrat;
+  color: rgb(69, 69, 69);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.user-answer .message {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 80%;
+  position: relative;
+  margin-left: 50px;
+}
+
+.user-answer .message::before {
+  content: none; /* Убираем псевдоэлемент */
+}
+
+.popup {
+  display: none; /* Скрываем по умолчанию */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 200px;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+}
+
+.popup-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 36px;
+    padding: 10px;
+    margin-top: 150px;
+  }
+
+  h2 {
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  .logo {
+    width: 100px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header nav {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .container {
+    width: auto;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .calc-button {
+    width: 80px;
+    height: 80px;
+    font-size: 12px;
+  }
+
+  .header-block {
+    flex-direction: column;
+  }
+
+  .progress-bar {
+    margin-left: 0;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .promo {
+    padding: 10px;
+  }
+
+  .start-screen {
+  }
+
+  .start-screen .text-container {
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .start-screen img {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .start-screen .start-button {
+    position: static;
+    transform: none;
+    margin-top: 20px;
+  }
+
+  .welcome-text {
+    text-align: center;
+  }
+
+  .options {
+    text-align: center;
+  }
+
+  input[type="text"],
+  input[type="tel"] {
+    width: 92%;
+  }
+}
+
+@media (max-width: 480px) {
+  .promo {
+    padding: 10px;
+  }
+
+  .start-screen .start-button {
+    width: 100px;
+    height: 100px;
+    font-size: 16px;
+  }
+
+  .start-screen .start-button::after {
+    font-size: 20px;
+  }
+
+  .welcome-text {
+    text-align: center;
+  }
+
+  .options {
+    text-align: center;
+  }
+}
+
+.typing {
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+}
+
+.typing .dot {
+  animation: blink 1s infinite;
+}
+
+.typing .dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing .dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/*QWIZ finish*/
