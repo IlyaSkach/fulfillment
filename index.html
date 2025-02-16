@@ -336,9 +336,6 @@
 	<!DOCTYPE html>
 	<html lang="ru">
 
-
-
-
 	<section id="quiz" class="section">
 		<div class="container">
 			<h2>квиз</h2>
@@ -347,7 +344,7 @@
 					<button class="custom-button" onclick="startQuiz()">Получить расчет</button>
 				</div>
 			</div>
-		
+
 			<!-- Экран квиза (скрыт по умолчанию) -->
 			<div class="quiz-screen" style="display: none;">
 				<!-- Блок с аватаром, кнопкой звонка и прогресс-баром -->
@@ -422,24 +419,93 @@
 	<section id="faq" class="section">
 		<div class="container">
 			<h2>Ответы на часто задаваемые вопросы</h2>
-			<p>Тут будут вопросы и ответы...</p>
+			<div class="faq-item">
+				<div class="faq-question" onclick="toggleAnswer(this)">
+					<span class="faq-icon">+</span>
+					<span class="faq-text">Насколько быстрая доставка на склад маркетплейса ?</span>
+				</div>
+				<div class="faq-answer" style="display: none;">
+					Подготовим ваш товар к отгрузке максимально за 3 рабочих дня.
+				</div>
+			</div>
+			<div class="faq-item">
+				<div class="faq-question" onclick="toggleAnswer(this)">
+					<span class="faq-icon">+</span>
+					<span class="faq-text">Какова минимальная партия товара ?</span>
+				</div>
+				<div class="faq-answer" style="display: none;">
+					Подготовим ваш товар к отгрузке максимально за 3 рабочих дня.
+				</div>
+			</div>
+			<div class="faq-item">
+				<div class="faq-question" onclick="toggleAnswer(this)">
+					<span class="faq-icon">+</span>
+					<span class="faq-text">На какие склады Вы отгружаете ?</span>
+				</div>
+				<div class="faq-answer" style="display: none;">
+					Подготовим ваш товар к отгрузке максимально за 3 рабочих дня.
+				</div>
+			</div>
+			<div class="faq-item">
+				<div class="faq-question" onclick="toggleAnswer(this)">
+					<span class="faq-icon">+</span>
+					<span class="faq-text">Откуда забираете товар ?</span>
+				</div>
+				<div class="faq-answer" style="display: none;">
+					Подготовим ваш товар к отгрузке максимально за 3 рабочих дня.
+				</div>
+			</div>
 		</div>
 	</section>
 
 
 
-	<section id="faq" class="section">
+	<!-- <section id="faq" class="section">
 		<div class="container">
 			<h2>Ответы на часто задаваемые вопросы</h2>
 			<p>Тут будут вопросы и ответы...</p>
 		</div>
-	</section>
+	</section> -->
 
-	<footer>
-		<div class="container">
-			<p>Контакты и информация</p>
+	<footer class="footer">
+	
+			<div class="footer-section-logo">
+				<img src="Images/svg/footerlogo.svg" alt="Big Box Fulfillment" class="logo">
+				<div class="footer-bottom">
+					<p>&copy; 2025 Все права защищены </p>
+				</div>
+			</div>
+			<div class="footer-section-contact">
+				<nav class="footer-nav">
+					<ul>
+						<li><a href="#">О нас</a></li>
+						<li><a href="#">Услуги</a></li>
+						<li><a href="#">Цены</a></li>
+						<li><a href="#">Контакты</a></li>
+					</ul>
+				</nav>
+				<div class="footer-contacts">
+					<p><img src="Images/svg/footertel.svg" alt="tel"> +7 900 121 60 43</p>
+					<p><img src="Images/svg/footermail.svg" alt="email"> Fulfillment@mail.ru</p>
+				</div>
+				<a class="footer-link" href="#">Политика конфиденциальности</a>
+			</div>
+			<form class="footer-form">
+				<label for="name">Ваше имя</label>
+				<input type="text" placeholder="Ваше имя" class="input">
+				<label for="phone">Ваш мобильный</label>
+				<input type="text" placeholder="Ваш мобильный" class="input">
+				<label for="comment">Комментарий</label>
+				<textarea placeholder="Комментарий" class="textarea"></textarea>
+				<button class="submit-button">Отправить</button>
+				<div class="checkbox-container">
+					<input type="checkbox" id="agree" checked>
+					<label class="footer-checkbox" for="agree">Согласен с политикой конфиденциальности</label>
+			</div>
+			</form>
 		</div>
 	</footer>
+
 
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
