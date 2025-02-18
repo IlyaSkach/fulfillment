@@ -211,8 +211,9 @@ label {
   }
 
   .footer-bottom {
-    font-size: 16px;
-    line-height: 22px;
+    /* font-size: 16px;
+    line-height: 22px; */
+    display: none;
   }
 }
 

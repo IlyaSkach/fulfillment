@@ -204,21 +204,21 @@ function nextQuestion(questionNumber, userAnswer) {
                 `;
         document.querySelector(".chat").appendChild(nextQuestion);
         currentQuestion++;
-      } else {
+    } else {
         // После последнего вопроса форма для имени и телефона
         const endMessage = document.createElement("div");
         endMessage.classList.add("chat-message", "operator");
         endMessage.innerHTML = `
-                    <div class="avatar operator-avatar">
-                        <img src="Images/olga.gif" alt="avatar"></div>
-                    <div class="message">
-                        <p>Введите Ваше имя:</p>
-                        <input type="text" id="user-name" placeholder="Ваше имя">
-                        <p>Введите Ваш телефон:</p>
-                        <input type="tel" id="user-phone" placeholder="+7 (999) 999-99-99" maxlength="18" oninput="formatPhoneNumber(this)">
-                        <button class="submit-button" onclick="submitForm()">Отправить </button>
-                    </div>
-                `;
+          <div class="avatar operator-avatar">
+            <img src="Images/olga.gif" alt="avatar"></div>
+          <div class="message">
+            <p>Введите Ваше имя:</p>
+            <input type="text" id="user-name" placeholder="Ваше имя">
+            <p>Введите Ваш телефон:</p>
+            <input type="tel" id="user-phone" placeholder="+7 (999) 999-99-99" maxlength="18" oninput="formatPhoneNumber(this)">
+            <button class="submit-button-quiz" onclick="submitForm(event)">Отправить</button>
+          </div>
+        `;
         document.querySelector(".chat").appendChild(endMessage);
       }
   
@@ -260,22 +260,26 @@ function formatPhoneNumber(input) {
   input.value = formattedValue.slice(0, 18);
 }
 
-function submitForm() {
-  const name = document.getElementById("user-name").value;
-  const phone = document.getElementById("user-phone").value;
-  const phonePattern = /^\+7\s\(\d{3}\)\s\d{3}\s\d{2}-\d{2}$/;
-
-  if (!name || !phonePattern.test(phone)) {
-    showPopup("Введите корректное имя и номер телефона.");
-    return;
+function submitForm(event) {
+    if (event) {
+      event.preventDefault(); // Предотвращаем стандартное поведение формы
+    }
+  
+    const name = document.getElementById("user-name").value;
+    const phone = document.getElementById("user-phone").value;
+    const phonePattern = /^\+7\s\(\d{3}\)\s\d{3}\s\d{2}-\d{2}$/;
+  
+    if (!name || !phonePattern.test(phone)) {
+      showPopup("Введите корректное имя и номер телефона.");
+      return;
+    }
+    // Отображаем благодарность
+    document.querySelector(".quiz-screen").style.display = "none";
+    document.querySelector(".final-screen").style.display = "block";
+    document.getElementById(
+      "final-message"
+    ).innerHTML = `Спасибо, ${name}! Ваши данные успешно отправлены. Пока мы с вами свяжемся, вы можете ознакомится с ответами на часто задоваемые вопросы или <a href="tel:+1234567890">позвонить нам</a>.`;
   }
-  // Отображаем благодарность
-  document.querySelector(".quiz-screen").style.display = "none";
-  document.querySelector(".final-screen").style.display = "block";
-  document.getElementById(
-    "final-message"
-  ).innerHTML = `Спасибо, ${name}! Ваши данные успешно отправлены. Пока мы с вами свяжемся, вы можете ознакомится с ответами на часто задоваемые вопросы или <a href="tel:+1234567890">позвонить нам</a>.`;
-}
 
 function showPopup(message) {
   document.getElementById("popup-message").textContent = message;

@@ -1,3 +1,5 @@
+
+/* До 1580*/
 .section {
   padding: var(--padding-section) 0;
 }
@@ -284,7 +286,7 @@
   bottom: 100%;
   left: 50%;
   width: 1px;
-  height: var(--line-height, 517px);
+  height: var(--line-height, 533px);
   background-color: var(--primary-color);
   transition: height 1.2s ease-in-out;
 }
@@ -508,6 +510,10 @@ h5 {
     margin-bottom: 50px;
   }
 
+  .advantages-item {
+    gap: 5px;
+  }
+
   .advantages-item-card {
     width: calc(50% - 20px);
   }
@@ -527,6 +533,10 @@ h5 {
     font-size: 30px;
     line-height: 35px;
     margin-bottom: 30px;
+  }
+
+  .advantages-item {
+    gap: 35px;
   }
 
   .advantages-item-card {
@@ -769,8 +779,8 @@ h5 {
 }
 
 .card-row:nth-of-type(2) .card::before {
-  top: -39px; /* Подстройте это значение в зависимости от высоты линии */
-  height: 32px; /* Высота линии для нижних блоков */
+  top: -268px; /* Подстройте это значение в зависимости от высоты линии */
+  height: 260px; /* Высота линии для нижних блоков */
 }
 
 .circle {
@@ -882,8 +892,63 @@ h5 {
   }
 
   .center-icon {
-    top: -100px;
-    left: 50%;
+    top: -94px;
+    left: 5%;
+    width: 20%;
+  }
+
+  .how-desctop {
+    display: none;
+  }
+
+  .how-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .circle-mobile {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .circle-mobile  img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .how-mobile .text {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    max-width: 300px;
+    margin-bottom: 40px;
+  }
+
+  .new-top-left-image-container {
+    display: none;
+  }
+  .new-bottom-right-image-container {
+    display: none;
+  }
+  .how-desctop {
+    display: none;
+  }
+  .top-image-container {
+    top: -40px; /* Подстройте это значение в зависимости от высоты изображения */
+  }
+
+  .bottom-image-container {
+    bottom: -40px; /* Подстройте это значение в зависимости от высоты изображения */
   }
 }
 
@@ -1219,6 +1284,7 @@ h5 {
     clip-path: none;
     padding: 20px;
     flex-direction: column;
+    border-radius: 20%;
   }
 
   .choose-item-card {
@@ -1549,7 +1615,7 @@ input[type="tel"] {
   border-radius: 5px;
 }
 
-.submit-button {
+.submit-button-quiz {
   width: 100%;
 
   color: white;
