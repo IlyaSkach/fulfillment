@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Фулфилмент для маркетплейсов</title>
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> -->
 	<link rel="stylesheet" href="Styles/reset.css">
 	<link rel="stylesheet" href="Styles//variables.css">
 	<link rel="stylesheet" href="Styles//styles.css">
@@ -22,15 +22,21 @@
 			<div class="logo">
 				<img src="images/svg/logo.svg" alt="Логотип">
 			</div>
-			<nav>
+			<div class="burger-menu" onclick="toggleMenu()">
+				<div class="line"></div>
+				<div class="line"></div>
+				<div class="line"></div>
+			</div>
+			<nav class="header-nav">
 				<ul>
 					<li><a href="#about">О нас</a></li>
 					<li><a href="#services">Услуги</a></li>
 					<li><a href="#advantages">Цены</a></li>
 					<li><a href="#faq">Контакты</a></li>
+					<li class="mobile-only"><button class="header-btn">Перезвоните мне</button></li>
 				</ul>
 			</nav>
-			<button class="header-btn">Перезвоните мне</button>
+			<button class="header-btn desktop-only">Перезвоните мне</button>
 		</div>
 	</header>
 
@@ -139,13 +145,8 @@
 						Поможем выгодно провести оплату
 						производителю.</p>
 				</div>
-
 			</div>
 		</div>
-		<!-- <div class="shape">
-			<img src="Images/png/bg.png" alt="Background Image" class="background-image">
-			<img src="Images/png/boxinbg.png" alt="Inner Image" class="inner-image">
-	</div> -->
 	</section>
 
 	<section id="advantages" class="section">
@@ -194,6 +195,12 @@
 				</div>
 			</div>
 		</div>
+		<div class="top-image-container">
+			<img src="Images/png/advbg.png" alt="Top Image" class="top-image">
+		</div>
+		<div class="bottom-image-container">
+			<img src="Images/png/advbg.png" alt="Bottom Image" class="bottom-image">
+		</div>
 	</section>
 
 	<section id="working" class="section">
@@ -224,57 +231,93 @@
 			<div class="center-line">
 				<img id="movingSvg" src="Images/svg/car.svg" alt="Center Icon" class="center-icon">
 			</div>
-			<div class="card-row">
-				<p class="card card-1">Вы отправляете
-					заявку
-					<span class="circle circle-1"><img src="Images/svg/how1.svg" alt="Icon 1"></span>
-				</p>
-				<p class="card card-2">Забираем ваши
-					товары,
-					доставляем
-					на наш склад
-					<span class="circle circle-2"><img src="Images/svg/how3.svg" alt="Icon 2"></span>
-				</p>
-				<p class="card card-3">Производим упаковку
-					и маркировку по
-					согласованному
-					заданию
-					<span class="circle circle-3"><img src="Images/svg/how5.svg" alt="Icon 3"></span>
-				</p>
-				<p class="card card-4">Предоставляем отчет
-					о проделанной работе
-					<span class="circle circle-4"><img src="Images/svg/how7.svg" alt="Icon 4"></span>
-				</p>
+			<div class="how-desctop">
+				<div class="card-row">
+					<p class="card card-1">Вы отправляете
+						заявку
+						<span class="circle circle-1"><img src="Images/svg/how1.svg" alt="Icon 1"></span>
+					</p>
+					<p class="card card-2">Забираем ваши
+						товары,
+						доставляем
+						на наш склад
+						<span class="circle circle-2"><img src="Images/svg/how3.svg" alt="Icon 2"></span>
+					</p>
+					<p class="card card-3">Производим упаковку
+						и маркировку по
+						согласованному
+						заданию
+						<span class="circle circle-3"><img src="Images/svg/how5.svg" alt="Icon 3"></span>
+					</p>
+					<p class="card card-4">Предоставляем отчет
+						о проделанной работе
+						<span class="circle circle-4"><img src="Images/svg/how7.svg" alt="Icon 4"></span>
+					</p>
+				</div>
+				<div class="card-row">
+					<p class="card card-5">Мы согласовываем
+						детали
+						<span class="circle circle-5"><img src="Images/svg/how2.svg" alt="Icon 5"></span>
+					</p>
+					<p class="card card-6">Выполняем
+						приемку под,
+						видео
+						наблюдением,
+						считаем поштучно
+						ваши товары и
+						принимаем в нашу
+						систему складского
+						учета
+						<span class="circle circle-6"><img src="Images/svg/how4.svg" alt="Icon 6"></span>
+					</p>
+					<p class="card card-7">Определяем дату
+						поставки и
+						выполняем отгрузку
+						<span class="circle circle-7"><img src="Images/svg/how6.svg" alt="Icon 7"></span>
+					</p>
+
+
+				</div>
 			</div>
-			<div class="card-row">
-				<p class="card card-5">Мы согласовываем
-					детали
-					<span class="circle circle-5"><img src="Images/svg/how2.svg" alt="Icon 5"></span>
-				</p>
-				<p class="card card-6">Выполняем
-					приемку под,
-					видео
-					наблюдением,
-					считаем поштучно
-					ваши товары и
-					принимаем в нашу
-					систему складского
-					учета
-					<span class="circle circle-6"><img src="Images/svg/how4.svg" alt="Icon 6"></span>
-				</p>
-				<p class="card card-7">Определяем дату
-					поставки и
-					выполняем отгрузку
-					<span class="circle circle-7"><img src="Images/svg/how6.svg" alt="Icon 7"></span>
-				</p>
 
 
+			<div class="how-mobile">
+				<div class="circle-mobile">
+					<img src="Images/svg/how1.svg" alt="Icon 1">
+				</div>
+				<div class="text">Вы отправляете заявку</div>
+				<div class="circle-mobile">
+					<img src="Images/svg/how2.svg" alt="Icon 5">
+				</div>
+				<div class="text">Мы согласовываем детали</div>
+				<div class="circle-mobile">
+					<img src="Images/svg/how3.svg" alt="Icon 2">
+				</div>
+				<div class="text">Забираем ваши товары, доставляем на наш склад</div>
+				<div class="circle-mobile">
+					<img src="Images/svg/how4.svg" alt="Icon 6">
+				</div>
+				<div class="text">Выполняем приемку под видео наблюдением, считаем поштучно ваши товары и принимаем в нашу
+					систему складского учета</div>
+				<div class="circle-mobile">
+					<img src="Images/svg/how5.svg" alt="Icon 3">
+				</div>
+				<div class="text">Производим упаковку и маркировку по согласованному заданию</div>
+				<div class="circle-mobile">
+					<img src="Images/svg/how6.svg" alt="Icon 7">
+				</div>
+				<div class="text">Определяем дату поставки и выполняем отгрузку</div>
+				<div class="circle-mobile">
+					<img src="Images/svg/how7.svg" alt="Icon 4">
+				</div>
+				<div class="text">Предоставляем отчет о проделанной работе</div>
 			</div>
 			<div class="how-footer">
 				<p class="how-footer-text">Все услуги оплачиваются по факту выполненных работ</p>
 				<img src="Images/svg/howsvg.svg" alt="">
 			</div>
 		</div>
+
 		<div class="top-image-container">
 			<img src="Images/png/howtop.png" alt="Top Image" class="top-image">
 		</div>
@@ -309,7 +352,6 @@
 					<div class="form-group">
 						<input type="tel" id="phone" name="phone" placeholder="Ваш номер телефона" required>
 					</div>
-					<!-- <button type="submit" class="calculate-button">Получить расчет</button> -->
 					<div class="button-container">
 						<button class="calculate-button">Получить расчет</button>
 					</div>
@@ -333,11 +375,9 @@
 		</div>
 	</section>
 
-	<!DOCTYPE html>
-	<html lang="ru">
 
 	<section id="quiz" class="section">
-		<div class="container">
+		<div class="container-quiz">
 			<h2>квиз</h2>
 			<div class="start-screen ">
 				<div class="button-container quiz-button">
@@ -460,49 +500,44 @@
 
 
 
-	<!-- <section id="faq" class="section">
-		<div class="container">
-			<h2>Ответы на часто задаваемые вопросы</h2>
-			<p>Тут будут вопросы и ответы...</p>
-		</div>
-	</section> -->
+
 
 	<footer class="footer">
-	
-			<div class="footer-section-logo">
-				<img src="Images/svg/footerlogo.svg" alt="Big Box Fulfillment" class="logo">
-				<div class="footer-bottom">
-					<p>&copy; 2025 Все права защищены </p>
-				</div>
+
+		<div class="footer-section-logo">
+			<img src="Images/svg/footerlogo.svg" alt="Big Box Fulfillment" class="logo">
+			<div class="footer-bottom">
+				<p>&copy; 2025 Все права защищены </p>
 			</div>
-			<div class="footer-section-contact">
-				<nav class="footer-nav">
-					<ul>
-						<li><a href="#">О нас</a></li>
-						<li><a href="#">Услуги</a></li>
-						<li><a href="#">Цены</a></li>
-						<li><a href="#">Контакты</a></li>
-					</ul>
-				</nav>
-				<div class="footer-contacts">
-					<p><img src="Images/svg/footertel.svg" alt="tel"> +7 900 121 60 43</p>
-					<p><img src="Images/svg/footermail.svg" alt="email"> Fulfillment@mail.ru</p>
-				</div>
-				<a class="footer-link" href="#">Политика конфиденциальности</a>
+		</div>
+		<div class="footer-section-contact">
+			<nav class="footer-nav">
+				<ul>
+					<li><a href="#">О нас</a></li>
+					<li><a href="#">Услуги</a></li>
+					<li><a href="#">Цены</a></li>
+					<li><a href="#">Контакты</a></li>
+				</ul>
+			</nav>
+			<div class="footer-contacts">
+				<p><img src="Images/svg/footertel.svg" alt="tel"> +7 900 121 60 43</p>
+				<p><img src="Images/svg/footermail.svg" alt="email"> Fulfillment@mail.ru</p>
 			</div>
-			<form class="footer-form">
-				<label for="name">Ваше имя</label>
-				<input type="text" placeholder="Ваше имя" class="input">
-				<label for="phone">Ваш мобильный</label>
-				<input type="text" placeholder="Ваш мобильный" class="input">
-				<label for="comment">Комментарий</label>
-				<textarea placeholder="Комментарий" class="textarea"></textarea>
-				<button class="submit-button">Отправить</button>
-				<div class="checkbox-container">
-					<input type="checkbox" id="agree" checked>
-					<label class="footer-checkbox" for="agree">Согласен с политикой конфиденциальности</label>
+			<a class="footer-link" href="#">Политика конфиденциальности</a>
+		</div>
+		<form class="footer-form">
+			<label for="name">Ваше имя</label>
+			<input type="text" placeholder="Ваше имя" class="input">
+			<label for="phone">Ваш мобильный</label>
+			<input type="text" placeholder="Ваш мобильный" class="input">
+			<label for="comment">Комментарий</label>
+			<textarea placeholder="Комментарий" class="textarea"></textarea>
+			<button class="submit-button">Отправить</button>
+			<div class="checkbox-container">
+				<input type="checkbox" id="agree" checked>
+				<label class="footer-checkbox" for="agree">Согласен с политикой конфиденциальности</label>
 			</div>
-			</form>
+		</form>
 		</div>
 	</footer>
 
@@ -517,3 +552,13 @@
 </body>
 
 </html>
+
+
+
+
+<!-- <section id="faq" class="section">
+		<div class="container">
+			<h2>Ответы на часто задаваемые вопросы</h2>
+			<p>Тут будут вопросы и ответы...</p>
+		</div>
+	</section> -->
