@@ -1,45 +1,3 @@
-// document.querySelectorAll(".services-item-card").forEach((card) => {
-//   card.addEventListener("mouseenter", () => {
-//     gsap.to(card, {
-//       scale: 1.05,
-//       rotate: 2,
-//       boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)",
-//       border: "2px solid var(--primary-color)", // Плавное появление бордера
-//       zIndex: 10, // Поднимаем карточку над остальными
-//       duration: 0.3,
-//       ease: "power2.out",
-//     });
-
-//     // Прячем линии (::before и ::after) одновременно с появлением бордера
-//     gsap.to(card, {
-//       "--line-height": "0px",
-//       "--small-line-height": "0px",
-//       duration: 0.3,
-//       ease: "power2.out",
-//     });
-//   });
-
-//   card.addEventListener("mouseleave", () => {
-//     gsap.to(card, {
-//       scale: 1,
-//       rotate: 0,
-//       boxShadow: "none",
-//       border: "2px solid transparent", // Убираем бордер
-//       zIndex: 1, // Возвращаем стандартный уровень
-//       duration: 0.3,
-//       ease: "power2.out",
-//     });
-
-//     // Возвращаем линии (::before и ::after)
-//     gsap.to(card, {
-//       "--line-height": "517px",
-//       "--small-line-height": "31px",
-//       duration: 0.3,
-//       ease: "power2.out",
-//     });
-//   });
-// });
-
 gsap.registerPlugin(ScrollTrigger);
 
 let containerWidth = document.querySelector("#how .container").offsetWidth;
@@ -81,7 +39,8 @@ ScrollTrigger.create({
 // Обновляем ширину контейнера при изменении размера окна
 window.addEventListener("resize", () => {
   containerWidth = document.querySelector("#how .container").offsetWidth;
-  mainAnimation.vars.x = containerWidth - document.querySelector("#movingSvg").offsetWidth;
+  mainAnimation.vars.x =
+    containerWidth - document.querySelector("#movingSvg").offsetWidth;
   mainAnimation.invalidate(); // Пересчитываем анимацию
 });
 
@@ -137,57 +96,57 @@ function startQuiz() {
 }
 
 function nextQuestion(questionNumber, userAnswer) {
-    if (questionNumber !== currentQuestion) {
-      return; // Если номер вопроса не совпадает с текущим, ничего не делаем
-    }
-  
-    // Скрываем текст приветствия после ответа на первый вопрос
-    if (currentQuestion === 1) {
-      document.querySelector(".welcome-text").style.display = "none";
-      document.querySelector(".call-button").style.display = "block"; // Показываем кнопку "Позвонить"
-    }
-  
-    // Добавляем ответ пользователя в чат
-    const userAnswerMessage = document.createElement("div");
-    userAnswerMessage.classList.add("chat-message", "user-answer");
-  
-    const userAvatar = document.createElement("div");
-    userAvatar.classList.add("avatar");
-    userAvatar.style.backgroundColor = "#007bff"; // Цвет аватара пользователя
-  
-    const userMessage = document.createElement("div");
-    userMessage.classList.add("message");
-    userMessage.textContent = userAnswer;
-  
-    userAnswerMessage.appendChild(userAvatar);
-    userAnswerMessage.appendChild(userMessage);
-    document.querySelector(".chat").appendChild(userAnswerMessage);
-  
-    // Появляется сообщение "Оля печатает..."
-    const typingMessage = document.createElement("div");
-    typingMessage.classList.add("chat-message", "operator");
-    typingMessage.innerHTML = `
+  if (questionNumber !== currentQuestion) {
+    return; // Если номер вопроса не совпадает с текущим, ничего не делаем
+  }
+
+  // Скрываем текст приветствия после ответа на первый вопрос
+  if (currentQuestion === 1) {
+    document.querySelector(".welcome-text").style.display = "none";
+    document.querySelector(".call-button").style.display = "block"; // Показываем кнопку "Позвонить"
+  }
+
+  // Добавляем ответ пользователя в чат
+  const userAnswerMessage = document.createElement("div");
+  userAnswerMessage.classList.add("chat-message", "user-answer");
+
+  const userAvatar = document.createElement("div");
+  userAvatar.classList.add("avatar");
+  userAvatar.style.backgroundColor = "#007bff"; // Цвет аватара пользователя
+
+  const userMessage = document.createElement("div");
+  userMessage.classList.add("message");
+  userMessage.textContent = userAnswer;
+
+  userAnswerMessage.appendChild(userAvatar);
+  userAnswerMessage.appendChild(userMessage);
+  document.querySelector(".chat").appendChild(userAnswerMessage);
+
+  // Появляется сообщение "Оля печатает..."
+  const typingMessage = document.createElement("div");
+  typingMessage.classList.add("chat-message", "operator");
+  typingMessage.innerHTML = `
             <div class="avatar operator-avatar">
                 <img src="Images/olga.gif" alt="avatar"></div>
             <div class="message typing">
                 Оля печатает<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>
             </div>
         `;
-    document.querySelector(".chat").appendChild(typingMessage);
-  
-    // Плавный скролл вниз
-    typingMessage.scrollIntoView({ behavior: 'smooth', block: 'end' });
-  
-    // Задержка перед появлением следующего вопроса
-    setTimeout(() => {
-      typingMessage.remove();
-  
-      if (currentQuestion < totalQuestions) {
-        const nextQuestionData = questions[currentQuestion];
-  
-        const nextQuestion = document.createElement("div");
-        nextQuestion.classList.add("chat-message", "operator");
-        nextQuestion.innerHTML = `
+  document.querySelector(".chat").appendChild(typingMessage);
+
+  // Плавный скролл вниз
+  typingMessage.scrollIntoView({ behavior: "smooth", block: "end" });
+
+  // Задержка перед появлением следующего вопроса
+  setTimeout(() => {
+    typingMessage.remove();
+
+    if (currentQuestion < totalQuestions) {
+      const nextQuestionData = questions[currentQuestion];
+
+      const nextQuestion = document.createElement("div");
+      nextQuestion.classList.add("chat-message", "operator");
+      nextQuestion.innerHTML = `
                     <div class="avatar operator-avatar">
                         <img src="Images/olga.gif" alt="avatar"></div>
                     <div class="message">${nextQuestionData.text}</div>
@@ -202,13 +161,13 @@ function nextQuestion(questionNumber, userAnswer) {
                           .join("")}
                     </div>
                 `;
-        document.querySelector(".chat").appendChild(nextQuestion);
-        currentQuestion++;
+      document.querySelector(".chat").appendChild(nextQuestion);
+      currentQuestion++;
     } else {
-        // После последнего вопроса форма для имени и телефона
-        const endMessage = document.createElement("div");
-        endMessage.classList.add("chat-message", "operator");
-        endMessage.innerHTML = `
+      // После последнего вопроса форма для имени и телефона
+      const endMessage = document.createElement("div");
+      endMessage.classList.add("chat-message", "operator");
+      endMessage.innerHTML = `
           <div class="avatar operator-avatar">
             <img src="Images/olga.gif" alt="avatar"></div>
           <div class="message">
@@ -219,17 +178,19 @@ function nextQuestion(questionNumber, userAnswer) {
             <button class="submit-button-quiz" onclick="submitForm(event)">Отправить</button>
           </div>
         `;
-        document.querySelector(".chat").appendChild(endMessage);
-      }
-  
-      // Обновляем прогресс-бар
-      const progress = (currentQuestion / totalQuestions) * 100;
-      document.querySelector(".progress").style.width = `${progress}%`;
-  
-      // Плавный скролл вниз
-      document.querySelector(".chat").lastElementChild.scrollIntoView({ behavior: 'smooth', block: 'end' });
-    }, 2000); // Задержка 2 секунды
-  }
+      document.querySelector(".chat").appendChild(endMessage);
+    }
+
+    // Обновляем прогресс-бар
+    const progress = (currentQuestion / totalQuestions) * 100;
+    document.querySelector(".progress").style.width = `${progress}%`;
+
+    // Плавный скролл вниз
+    document
+      .querySelector(".chat")
+      .lastElementChild.scrollIntoView({ behavior: "smooth", block: "end" });
+  }, 2000); // Задержка 2 секунды
+}
 
 function formatPhoneNumber(input) {
   let value = input.value.replace(/\D/g, ""); // Удаляем все нецифровые символы
@@ -261,25 +222,25 @@ function formatPhoneNumber(input) {
 }
 
 function submitForm(event) {
-    if (event) {
-      event.preventDefault(); // Предотвращаем стандартное поведение формы
-    }
-  
-    const name = document.getElementById("user-name").value;
-    const phone = document.getElementById("user-phone").value;
-    const phonePattern = /^\+7\s\(\d{3}\)\s\d{3}\s\d{2}-\d{2}$/;
-  
-    if (!name || !phonePattern.test(phone)) {
-      showPopup("Введите корректное имя и номер телефона.");
-      return;
-    }
-    // Отображаем благодарность
-    document.querySelector(".quiz-screen").style.display = "none";
-    document.querySelector(".final-screen").style.display = "block";
-    document.getElementById(
-      "final-message"
-    ).innerHTML = `Спасибо, ${name}! Ваши данные успешно отправлены. Пока мы с вами свяжемся, вы можете ознакомится с ответами на часто задоваемые вопросы или <a href="tel:+1234567890">позвонить нам</a>.`;
+  if (event) {
+    event.preventDefault(); // Предотвращаем стандартное поведение формы
   }
+
+  const name = document.getElementById("user-name").value;
+  const phone = document.getElementById("user-phone").value;
+  const phonePattern = /^\+7\s\(\d{3}\)\s\d{3}\s\d{2}-\d{2}$/;
+
+  if (!name || !phonePattern.test(phone)) {
+    showPopup("Введите корректное имя и номер телефона.");
+    return;
+  }
+  // Отображаем благодарность
+  document.querySelector(".quiz-screen").style.display = "none";
+  document.querySelector(".final-screen").style.display = "block";
+  document.getElementById(
+    "final-message"
+  ).innerHTML = `Спасибо, ${name}! Ваши данные успешно отправлены. Пока мы с вами свяжемся, вы можете ознакомится с ответами на часто задоваемые вопросы или <a href="tel:+1234567890">позвонить нам</a>.`;
+}
 
 function showPopup(message) {
   document.getElementById("popup-message").textContent = message;
@@ -307,18 +268,80 @@ function toggleAnswer(element) {
 }
 
 function toggleMenu() {
-    const burgerMenu = document.querySelector(".burger-menu");
-    const navList = document.querySelector("nav ul");
-    const nextSection = document.querySelector("#about");
-  
-    burgerMenu.classList.toggle("active");
-    navList.classList.toggle("active");
-  
-    if (navList.classList.contains("active")) {
-      navList.style.maxHeight = navList.scrollHeight + "px";
-      nextSection.style.marginTop = navList.scrollHeight + "px";
-    } else {
-      navList.style.maxHeight = "0";
-      nextSection.style.marginTop = "0";
-    }
+  const burgerMenu = document.querySelector(".burger-menu");
+  const navList = document.querySelector("nav ul");
+  const nextSection = document.querySelector("#about");
+
+  burgerMenu.classList.toggle("active");
+  navList.classList.toggle("active");
+
+  if (navList.classList.contains("active")) {
+    navList.style.maxHeight = navList.scrollHeight + "px";
+    nextSection.style.marginTop = navList.scrollHeight + "px";
+  } else {
+    navList.style.maxHeight = "0";
+    nextSection.style.marginTop = "0";
   }
+}
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.utils.toArray(".animate-header").forEach((header) => {
+    gsap.from(header, {
+      y: 100,
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: header,
+        start: "top 80%",
+        end: "bottom 60%",
+        toggleActions: "play none none none",
+      },
+    });
+  });
+
+  gsap.utils.toArray(".animate-text").forEach((text) => {
+    gsap.from(text, {
+      y: 100,
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: text,
+        start: "top 80%",
+        end: "bottom 60%",
+        toggleActions: "play none none reverse",
+      },
+    });
+  });
+
+  gsap.utils.toArray(".animate-card").forEach((card) => {
+    gsap.from(card, {
+      x: -100,
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: card,
+        start: "top 80%",
+        end: "bottom 60%",
+        toggleActions: "play none none reverse",
+      },
+    });
+  });
+
+  gsap.utils.toArray(".working-item-card").forEach((card, index) => {
+    gsap.from(card, {
+      x: index % 2 === 0 ? -100 : 100,
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: card,
+        start: "top 80%",
+        end: "bottom 60%",
+        toggleActions: "play none none reverse",
+      },
+    });
+  });
+});

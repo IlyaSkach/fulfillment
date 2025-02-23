@@ -1,4 +1,3 @@
-
 /* До 1580*/
 .section {
   padding: var(--padding-section) 0;
@@ -6,6 +5,38 @@
 .container {
   width: var(--container-width);
   margin: 0 auto;
+}
+
+
+.left-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+}
+
+.left-image {
+  position: absolute;
+  left: 0;
+  bottom: 63px; /* Подстройте это значение в зависимости от высоты изображения */
+  transform: translateY(-50%);
+  width: 10%;
+  height: auto;
+}
+
+.right-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+}
+
+.right-image {
+  position: absolute;
+  right: 0;
+  top: -46px; /* Подстройте это значение в зависимости от высоты изображения */
+  transform: translateY(-50%);
+  width: 10%;
+  height: auto;
+  z-index: 2;
 }
 
 #about {
@@ -241,6 +272,15 @@
     margin-top: 10px;
   }
 }
+@media (min-width: 1581px) and (max-width: 1920px) {
+  #about h2 {
+    font-family: Bebas Neue Cyrillic;
+    font-size: 80px;
+    font-weight: 400;
+    line-height: 80px;
+    margin-top: 70px;
+  }
+}
 
 /* Общие стили */
 #services {
@@ -402,10 +442,30 @@ h5 {
   }
 }
 
+@media (min-width: 1581px) and (max-width: 1920px) {
+  #services h2 {
+    font-family: Bebas Neue Cyrillic;
+    font-size: 65px;
+    font-weight: 400;
+    line-height: 65px;
+    margin-top: 70px;
+  }
+
+  .services-item-card::before {
+    height: var(--line-height, 508px);
+  }
+  .services-item-card::after {
+    top: -8%;
+  }
+  .services-item::before {
+    width: 65.3%;
+  }
+}
+
 /* Общие стили */
 #advantages {
   position: relative;
-  background: var(--primary-color);
+  background: #FF974F;
   overflow: hidden;
 
   h2 {
@@ -554,6 +614,20 @@ h5 {
   }
 }
 
+@media (min-width: 1581px) and (max-width: 1920px) {
+  #advantages h2 {
+    font-family: Bebas Neue Cyrillic;
+    font-size: 65px;
+    font-weight: 400;
+    line-height: 65px;
+    margin-top: 70px;
+  }
+
+  .advantages-item {
+    gap: 65px;
+  }
+}
+
 /* Общие стили */
 #working {
   h2 {
@@ -653,6 +727,20 @@ h5 {
     font-size: 16px;
     line-height: 20px;
     margin-top: 15px;
+  }
+}
+
+@media (min-width: 1581px) and (max-width: 1920px) {
+  #working h2 {
+    font-family: Bebas Neue Cyrillic;
+    font-size: 65px;
+    font-weight: 400;
+    line-height: 65px;
+    margin-top: 70px;
+  }
+
+  .working-item {
+   margin-bottom: 70px;
   }
 }
 
@@ -919,7 +1007,7 @@ h5 {
     margin-bottom: 20px;
   }
 
-  .circle-mobile  img {
+  .circle-mobile img {
     width: 20px;
     height: 20px;
   }
@@ -1018,7 +1106,7 @@ h5 {
     margin-bottom: 20px;
   }
 
-  .circle-mobile  img {
+  .circle-mobile img {
     width: 20px;
     height: 20px;
   }
@@ -1075,6 +1163,61 @@ h5 {
   }
 }
 
+@media (min-width: 1581px) and (max-width: 1920px) {
+  #how h2 {
+    font-family: Bebas Neue Cyrillic;
+    font-size: 65px;
+    font-weight: 400;
+    line-height: 65px;
+    margin-top: 70px;
+  }
+  .circle-1 {
+    top: -67px; /* Подстройте это значение в зависимости от высоты линии */
+  }
+
+  .circle-2 {
+    top: -67px; /* Подстройте это значение в зависимости от высоты линии */
+  }
+
+  .circle-3 {
+    top: -67px; /* Подстройте это значение в зависимости от высоты линии */
+  }
+
+  .circle-4 {
+    top: -67px; /* Подстройте это значение в зависимости от высоты линии */
+  }
+
+  /* Позиционирование кругов для второго ряда */
+  .circle-5 {
+    top: -228px; /* Подстройте это значение в зависимости от высоты линии */
+  }
+
+  .circle-6 {
+    top: -228px; /* Подстройте это значение в зависимости от высоты линии */
+  }
+
+  .circle-7 {
+    top: -228px; /* Подстройте это значение в зависимости от высоты линии */
+  }
+  .card-row:nth-of-type(2) .card::before {
+    top: -246px; /* Подстройте это значение в зависимости от высоты линии */
+    height: 235px; /* Высота линии для нижних блоков */
+  }
+  .new-top-left-image-container {
+    top: -12px;
+    left: 0;
+  }
+
+  .new-top-left-image,
+  .new-bottom-right-image {
+    width: 100%; /* Установите нужную ширину */
+    height: auto; /* Установите нужную высоту */
+  }
+  .bottom-image-container {
+    bottom: -77px; /* Подстройте это значение в зависимости от высоты изображения */
+  }
+}
+
 #choose {
   h2 {
     color: var(--title-text-color);
@@ -1100,7 +1243,7 @@ h5 {
 }
 
 .choose-item {
-  width: 100%;
+  width: 105%;
   height: 391px; /* Подстрой под свои размеры */
   background-color: #5e3789;
   clip-path: path(
@@ -1388,6 +1531,25 @@ h5 {
   }
 }
 
+@media (min-width: 1581px) and (max-width: 1920px) {
+  #choose h2 {
+    font-family: Bebas Neue Cyrillic;
+    font-size: 65px;
+    font-weight: 400;
+    line-height: 65px;
+    margin-top: 140px;
+  }
+  .choose-item {
+    width: 85%;
+   margin: 10px auto;
+  }
+  .choose-discription {
+  
+    max-width: 635px;
+   
+  }
+}
+
 #quiz {
   h2 {
     color: var(--title-text-color);
@@ -1425,7 +1587,6 @@ h5 {
     flex-direction: column;
     padding: 20px;
   }
-
 }
 
 @media (max-width: 480px) {
@@ -1439,7 +1600,6 @@ h5 {
     flex-direction: column;
     padding: 10px;
   }
-
 }
 
 /*QWIZ*/
@@ -1848,6 +2008,19 @@ input[type="tel"] {
 
 /*QWIZ finish*/
 
+
+@media (min-width: 1581px) and (max-width: 1920px) {
+  #quiz h2 {
+    font-family: Bebas Neue Cyrillic;
+    font-size: 65px;
+    font-weight: 400;
+    line-height: 65px;
+    margin-top: 70px;
+    margin-bottom: 70px;
+  }
+ 
+}
+
 #faq {
   h2 {
     color: var(--title-text-color);
@@ -1957,4 +2130,16 @@ input[type="tel"] {
     font-size: 14px;
     line-height: 18px;
   }
+}
+
+
+@media (min-width: 1581px) and (max-width: 1920px) {
+  #faq h2 {
+    font-family: Bebas Neue Cyrillic;
+    font-size: 65px;
+    font-weight: 400;
+    line-height: 65px;
+    margin-top: 70px;
+  }
+ 
 }
