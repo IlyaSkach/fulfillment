@@ -289,33 +289,33 @@ function toggleMenu() {
 document.addEventListener("DOMContentLoaded", function () {
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.utils.toArray(".animate-header").forEach((header) => {
-    gsap.from(header, {
-      y: 100,
-      opacity: 0,
-      duration: 1,
-      scrollTrigger: {
-        trigger: header,
-        start: "top 80%",
-        end: "bottom 60%",
-        toggleActions: "play none none none",
-      },
-    });
-  });
+  // gsap.utils.toArray(".animate-header").forEach((header) => {
+  //   gsap.from(header, {
+  //     y: 100,
+  //     opacity: 0,
+  //     duration: 1,
+  //     scrollTrigger: {
+  //       trigger: header,
+  //       start: "top 80%",
+  //       end: "bottom 60%",
+  //       toggleActions: "play none none none",
+  //     },
+  //   });
+  // });
 
-  gsap.utils.toArray(".animate-text").forEach((text) => {
-    gsap.from(text, {
-      y: 100,
-      opacity: 0,
-      duration: 1,
-      scrollTrigger: {
-        trigger: text,
-        start: "top 80%",
-        end: "bottom 60%",
-        toggleActions: "play none none reverse",
-      },
-    });
-  });
+  // gsap.utils.toArray(".animate-text").forEach((text) => {
+  //   gsap.from(text, {
+  //     y: 100,
+  //     opacity: 0,
+  //     duration: 1,
+  //     scrollTrigger: {
+  //       trigger: text,
+  //       start: "top 80%",
+  //       end: "bottom 60%",
+  //       toggleActions: "play none none reverse",
+  //     },
+  //   });
+  // });
 
   gsap.utils.toArray(".animate-card").forEach((card) => {
     gsap.from(card, {
@@ -345,3 +345,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+

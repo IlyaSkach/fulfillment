@@ -29,19 +29,26 @@ header {
 .header-nav ul li {
   margin: 0 15px;
 }
+/* ...existing code... */
+
 .header-nav ul li a {
   color: var(--text-color);
   text-decoration: none;
   font-size: 20px;
   font-weight: 400;
   line-height: 24px;
-  transition: color 0.3s ease, text-decoration 0.3s ease; /* Добавляем плавный переход */
+  transition: color 0.3s ease, text-decoration 0.3s ease, background-color 0.3s ease; /* Добавляем плавный переход для фона */
+  padding: 10px; /* Добавляем отступы для эффекта фона */
+  border-radius: 5px; /* Добавляем скругление углов */
 }
 
 .header-nav ul li a:hover {
   text-decoration: underline;
   color: var(--primary-color);
+ 
 }
+
+/* ...existing code... */
 
 .header-btn {
   background: var(--primary-color);
