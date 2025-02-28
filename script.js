@@ -240,6 +240,8 @@ function submitForm(event) {
   document.getElementById(
     "final-message"
   ).innerHTML = `Спасибо, ${name}! Ваши данные успешно отправлены. Пока мы с вами свяжемся, вы можете ознакомится с ответами на часто задоваемые вопросы или <a href="tel:+1234567890">позвонить нам</a>.`;
+     // Плавный скролл к последнему сообщению
+  document.querySelector(".final-screen").scrollIntoView({ behavior: "smooth", block: "end" });
 }
 
 function showPopup(message) {
@@ -317,19 +319,19 @@ document.addEventListener("DOMContentLoaded", function () {
   //   });
   // });
 
-  gsap.utils.toArray(".animate-card").forEach((card) => {
-    gsap.from(card, {
-      x: -100,
-      opacity: 0,
-      duration: 1,
-      scrollTrigger: {
-        trigger: card,
-        start: "top 80%",
-        end: "bottom 60%",
-        toggleActions: "play none none reverse",
-      },
-    });
-  });
+  // gsap.utils.toArray(".animate-card").forEach((card) => {
+  //   gsap.from(card, {
+  //     x: -100,
+  //     opacity: 0,
+  //     duration: 1,
+  //     scrollTrigger: {
+  //       trigger: card,
+  //       start: "top 80%",
+  //       end: "bottom 60%",
+  //       toggleActions: "play none none reverse",
+  //     },
+  //   });
+  // });
 
   gsap.utils.toArray(".working-item-card").forEach((card, index) => {
     gsap.from(card, {

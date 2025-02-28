@@ -137,12 +137,12 @@
 }
 
 .custom-button:hover {
-
+  color: #fff;
   border-bottom: 1px solid rgb(82, 82, 82);
   border-right: 1px solid rgb(82, 82, 82);
 }
 
-.btn-price {
+/* .btn-price {
   border-radius: 8px;
   background: rgb(218, 238, 239);
   color: rgb(57, 57, 57);
@@ -154,11 +154,60 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px; /* Расстояние между текстом и изображением */
+  gap: 10px; 
 }
 
 .btn-price:hover {
   border: 1px solid rgb(82, 82, 82);
+} */
+
+.btn-price {
+	display: inline-block;
+  padding: 23px 81px;
+  background: rgb(218, 238, 239);
+	border-radius: 8px;
+  color: rgb(57, 57, 57);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+	transition: all .3s;
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; 
+  border: none;
+	btn-price:after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgb(113, 243, 253);
+	
+		z-index: -2;
+	}
+	&:before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0%;
+		height: 100%;
+		background-color: rgb(113, 243, 253);
+		transition: all .3s;
+	
+		z-index: -1;
+	}
+	&:hover {
+		color: #fff;
+		&:before {
+			width: 100%;
+		}
+	}
 }
 
 .about-footer {
@@ -486,11 +535,16 @@ h5 {
   }
 
   p {
-    color: var(--text-color);
+    /* color: var(--text-color);
     font-size: 20px;
     font-weight: 400;
     line-height: 24px;
-    text-align: center;
+    text-align: center; */
+    color: rgb(69, 69, 69);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    margin-bottom: 20px;
   }
 }
 
@@ -600,6 +654,7 @@ h5 {
     line-height: 35px;
     margin-bottom: 30px;
   }
+  
 
   .advantages-item {
     gap: 35px;
